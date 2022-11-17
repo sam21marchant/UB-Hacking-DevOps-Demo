@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Unit Test
-        run: npm run test
+        run: npm run test:ci
 
   deploy:
     if: github.ref == 'refs/heads/main' # Only deploy on the main branch
