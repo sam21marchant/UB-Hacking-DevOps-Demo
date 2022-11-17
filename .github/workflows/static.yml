@@ -1,7 +1,7 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
-on: [push]
+on: push
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -29,7 +29,7 @@ jobs:
         run: npm run lint:style
 
   deploy:
-    if: github.branch == 'main' # Only deploy on the main branch
+    if: github.ref == 'refs/head/main' # Only deploy on the main branch
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
