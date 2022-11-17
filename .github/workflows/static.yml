@@ -29,7 +29,7 @@ jobs:
         run: npm run lint:style
 
   deploy:
-    if: github.ref == 'refs/head/main' # Only deploy on the main branch
+    if: github.ref == 'refs/heads/main' # Only deploy on the main branch
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
