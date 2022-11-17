@@ -19,6 +19,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Dependencies
+        run: npm ci
       - name: Lint Code
         run: npm run lint:code
       - name: Lint Style
